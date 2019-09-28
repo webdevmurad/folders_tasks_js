@@ -336,13 +336,13 @@ let inputF = document.querySelector('.inputF'),
 btn17.onclick = function() {
     n = +inputF.value;
     v = inputS.value;
-    if(n > 0 && v == 'euro') {
+    if(v == 'euro') {
         alert(parseInt(n * 0.9161));
     }
-    else if (n > 0 && v == 'rub') {
+    else if (v == 'rub') {
         alert(parseInt(n * 64.4156));
     }
-    else if (n > 0 && v == 'uah') {
+    else if (v == 'uah') {
         alert(parseInt(n * 24,10));
     }
 }
@@ -360,27 +360,67 @@ let inputA = document.querySelector('.inputA'),
 btn18.onclick = function() {
     a = +inputA.value;
     b = inputB.value;
-    switch(a > 0 && v == 'euro') {
-        case '':
-            alert(a * 0.9161);
+    switch (b) {
+        case "euro":
+            alert(parseInt(a * 0.9161));
             break;
+        case 'rub':
+            alert(parseInt(a * 64.4156));
+            break;
+        case 'uah':
+            alert(parseInt(a * 24,10));
+            break; 
     }
 }
 
 
 
 
-let z = document.querySelector('.inputZ'),
+// Task 19
+// Вывод на экран
+
+let zInp = document.querySelector('.inputZ'),
     xInp= document.querySelector('.inputX'),
     cInp = document.querySelector('.inputC'),
     btn19 = document.querySelector('.btn19');
 
 btn19.onclick = function(){
-    z = +z.value;
+    zInp = +zInp.value;
     cInp = +cInp.value;
-    xInp = x.value;
-    if(z > 0 && cInp > 0) {
-        alert(z + cInp)
+    xInp = xInp.value;
+    if(xInp == '+') {
+        alert(zInp + cInp);
     }
+    else if (xInp == '/') {
+        alert(zInp / cInp);
+    }
+    else if (xInp == '-') {
+        alert(zInp - cInp);
+    }
+    else if (xInp == '*') {
+        alert(zInp * cInp);
+    }
+}
 
+
+
+
+// Task 20
+// Вывод на экран
+
+let input1 = document.querySelector('.input1'),
+    input2= document.querySelector('.input2'),
+    input3 = document.querySelector('.input3'),
+    btn20 = document.querySelector('.btn20');
+
+btn20.onclick = function(){
+    input1 = +input1.value;
+    input2 = +input2.value;
+    input3 = input3.value;
+
+    switch (input3) {
+        case '+':
+            alert(input1 + input2);
+            break;
+    }
 }
