@@ -388,6 +388,7 @@ btn19.onclick = function(){
     zInp = +zInp.value;
     cInp = +cInp.value;
     xInp = xInp.value;
+    console.log(zInp);
     if(xInp == '+') {
         alert(zInp + cInp);
     }
@@ -408,19 +409,30 @@ btn19.onclick = function(){
 // Task 20
 // Вывод на экран
 
-let input1 = document.querySelector('.input1'),
-    input2= document.querySelector('.input2'),
-    input3 = document.querySelector('.input3'),
+let inpV = document.querySelector('.inputV'),
+    inpM = document.querySelector('.inputM'),
+    inpN = document.querySelector('.inputN'),
     btn20 = document.querySelector('.btn20');
 
 btn20.onclick = function(){
-    input1 = +input1.value;
-    input2 = +input2.value;
-    input3 = input3.value;
-
-    switch (input3) {
+    inpV = +inpV.value;
+    inpM = +inpM.value;
+    console.log(inpV);
+    console.log(inpM);
+    inpN = inpN.value;
+    switch (inpN){
         case '+':
-            alert(input1 + input2);
+            alert(inpV + inpM);
+            break;
+        case '/':
+            alert(inpV / inpM);
+            break;
+        case '-':
+            alert(inpV - inpM);
+            break;
+        case '*':
+            alert(inpV * inpM);
             break;
     }
+
 }
