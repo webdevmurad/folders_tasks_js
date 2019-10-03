@@ -96,11 +96,14 @@ let div1 = document.querySelector('.div1'),
     btn8 = document.querySelector('.btn8');
 
 btn8.onclick = () => {
-    div1.innerHTML = "<input class='inp8'> <button class = 'btn82'>OK</button> ";
-    btn82.onclick = () => {
-        alert(inp8.value);
+    div1.innerHTML = "<input class='inp82'> <button class = 'btn82'>OK</button> ";
+    document.querySelector('.btn82').onclick = () => {
+        let inp82 = document.querySelector('.inp82').value;
+        alert(inp82);
     }
 }
+
+
 
 
 
@@ -184,16 +187,16 @@ document.querySelector('.btn14').onclick = () => {
 // Task 15
 // Вывод на экран
 
-// document.querySelector('.btn15').onclick = (event) => {
-//     event.preventDefault();
-//     let text15 = document.querySelector('.text15'),
-//         inp15 = document.querySelector('.inp15');
-//     inp15 = inp15.value;
-//     alert(inp15);
-//     text15.value = inp15.value;
-// }
+document.querySelector('.btn15').onclick = (event) => {
+    event.preventDefault();
+    let inp15 = document.querySelector('.inp15');
 
-// Не получается
+        inp15 = inp15.value;
+        alert(inp15);
+        document.querySelector('#text15').value += inp15;
+        
+}
+
 
 
 
