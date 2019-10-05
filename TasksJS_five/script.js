@@ -100,7 +100,9 @@ btn9.onclick = () => {
 let taskTen = document.querySelector('.taskTen');
 
 for(let i = 1901; i <= 1950; i++) {
-    taskTen.innerHTML += i;
+    if(i % 2 === 0) {
+        taskTen.innerHTML += i;
+    }
 }
 
 // Task 11
@@ -215,6 +217,15 @@ document.querySelector('.btn19').onclick = (event) => {
     }
 }
 
+// Task 20.
+// Вывод в консоль
 
+let allIn = document.querySelectorAll('input[name="p3"]');
+
+for(let i = 0; i < allIn.length; i++) {
+    allIn[i].oninput = () => {
+        console.log('был изменен input');
+    }
+}
 
 
