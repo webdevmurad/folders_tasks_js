@@ -300,7 +300,7 @@ let o = 8;
 for (let i = 1; i <= 3; i++) {
     for (let k = 0; k <= 10; k++) {
         if (k <= u || k >= o) {
-            task19.innerHTML += '&nbsp&nbsp';
+            task19.innerHTML += '&nbsp;&nbsp;';
         } else {
             task19.innerHTML += '*';
         }
@@ -314,20 +314,38 @@ for (let i = 1; i <= 3; i++) {
 // Вывод на страницу
 
 let task20 = document.querySelector('.task20');
+let t1 = 3;
+let t2 = 4;
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 3; i++) {
     for (let k = 1; k <= 6; k++) {
-        if (k % 3 == 0) {
-            task20.innerHTML += '*';
-        } else if (i % 2 == 0) {
-            task20.innerHTML += '*';
-        } else if (i % 3 == 0 && k % 3 !==0) {
+        if (k < t1 || k > t2 ) {
+            task20.innerHTML += '&nbsp;&nbsp;';
+        } else {
             task20.innerHTML += '*';
         }
     }
-
-    task20.innerHTML += '<br>';
+    t1--;
+    t2++;
+    task20.innerHTML += "<br>"
 }
+
+c1 = 2;
+c2 = 5;
+for (let i = 2; i >= 1; i--) {
+    for (let k = 6; k >= 1; k--) {
+        if (k < c1 || k > c2) {
+            task20.innerHTML += '&nbsp;&nbsp;';
+        } else {
+            task20.innerHTML += '*';
+        }
+    }
+    c1++;
+    c2--;
+    task20.innerHTML += "<br>"
+}
+
+
 
 
 
