@@ -191,8 +191,8 @@ for (let i = 0; i <= 10; i++) {
 
 let task12 = document.querySelector('.task12');
 
-for (let i = 1; i <= 5; i++) {
-    for (let k = 1; k < i + 1; k++) {
+for (let i = 1; i <= 6; i++) {
+    for (let k = 1; k < i; k++) {
         task12.innerHTML += k + ' ';
     }
     task12.innerHTML += '<br>';
@@ -201,22 +201,133 @@ for (let i = 1; i <= 5; i++) {
 // Task 13
 // Вывод на страницу
 
+let ggg = ' '
+
+for (let i = 1; i <= 1; i++) {
+    for ( let k = 1; k <= 50; k++) {
+        if (k % 10 == 0) {
+            ggg += k;
+            ggg += '<br>';
+        }
+        else if (k < 10) {
+            ggg += `0${k + ' '}`;
+        }
+        else if (k > 10) {
+            ggg += `${k + ' '}`;
+        }
+    }
+}
+document.querySelector('.task13').innerHTML = ggg;
+
 // Task 14
 // Вывод на страницу
 
 let task14 = document.querySelector('.task14');
 
 
-for (let i = 5; i >= 1; i--) {
-
-    for (let k = 5; k < i - 1; k++) {
-        task14.innerHTML += k;
+for (let i = 5; i >= 0; i--) {
+    for (let k = i; k > 0; k--){
+        task14.innerHTML += k + ' ';
     }
+    
     task14.innerHTML += '<br>';
 }
 
+// Task 15
+// Вывод на страницу
 
+let task15 = document.querySelector('.task15');
 
+for (let i = 1; i <= 5; i++) {
+    for (let k = 5; k >= 1 ; k--) {
+        if (k <= i) {
+            task15.innerHTML += k + ' ';
+        } else {
+            task15.innerHTML += 'X' + ' ';
+        }
+    }
+    task15.innerHTML += '<br>';
+}
+
+// Task 16
+// Вывод на страницу
+
+let task16 = document.querySelector('.task16');
+
+for (let i = 1; i <= 5; i++) {
+    for (let k = 1; k <= i; k++) {
+        task16.innerHTML += i + ' ';
+    }
+    task16.innerHTML += '<br>';
+}
+
+// Task 17
+// Вывод на страницу
+
+let task17 = document.querySelector('.task17');
+
+for (let i = 5; i >= 1; i--) {
+    for (let k = 5; k >= i; k--) {
+        task17.innerHTML += i + ' ';
+    }
+    task17.innerHTML += '<br>';
+}
+
+// Task 18
+// Вывод на страницу
+
+let task18 = document.querySelector('.task18');
+
+for (let i = 5; i >= 1; i--) {
+    for (let k = 5; k >= i; k--) {
+        if (i == 2 || i == 4) {
+            task18.innerHTML += 'X' + ' ';
+        }
+        else {
+            task18.innerHTML += i + ' ';
+        }
+    }
+    task18.innerHTML += '<br>';
+}
+
+// Task 19
+// Вывод на страницу
+
+let task19 = document.querySelector('.task19');
+let u = 2;
+let o = 8; 
+
+for (let i = 1; i <= 3; i++) {
+    for (let k = 0; k <= 10; k++) {
+        if (k <= u || k >= o) {
+            task19.innerHTML += '&nbsp&nbsp';
+        } else {
+            task19.innerHTML += '*';
+        }
+    }
+    u--;
+    o++;
+    task19.innerHTML += '<br>';
+}
+
+// Task 20
+// Вывод на страницу
+
+let task20 = document.querySelector('.task20');
+
+for (let i = 1; i <= 5; i++) {
+    for (let k = 1; k <= 6; k++) {
+        if (k % 3 == 0) {
+            task20.innerHTML += '*';
+        } else if (i % 2 == 0) {
+            task20.innerHTML += '*';
+        } else if (i % 3 == 0 && k % 3 !==0) {
+            task20.innerHTML += '*';
+        }
+    }
+
+    task20.innerHTML += '<br>';
+}
 
 
 
