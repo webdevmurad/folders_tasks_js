@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <section>
+        <p>Task 1.</p>
+        <p>Создайте функцию (именнованную), которая при клике на кнопке выводит в консоль ваше имя.</p>
+
+        <button class="btn1">Ok</button>
+    </section>
+
+    <section>
+        <p>Task 2.</p>
+        <p>Создайте функцию (именованную). Функция должна примать один параметр - имя (например Ivan) 
+            и выводить имя переданное ей в консоль. Запустите функцию и передайте в качестве имени Sergey.</p>
+
+        <button class="btn2">OK</button>
+    </section>
+
+    <section>
+        <p>Task 3.</p>
+        <p>Создайте именнованную функцию, которая принимает 
+            параметр число и выводит его значение умноженное на 10 в консоль. 
+            Запустите выполнение функции. Убедитесь, что она работает. 
+            Теперь создайте кнопку и добавьте на нее событие onclick которое вызывает данную функцию с параметром.
+
+            Если вы напишите, подобный синтаксис elem.onclick = myFunc(11), то 
+            увидите, что данная функция - выполняется сразу при загрузке страницы! 
+            Действительно, ведь мы поставили скобки. Как передать 
+            параметр и не запустить функцию сразу? Довольно хитро:
+                
+            elem.onclick = function(){
+                myFunc(22);
+            }
+            Т.е. использовать обертку из анонимной функции.
+            </p>
+
+        <button class="btn3">OK</button>
+    </section>
+
+    <section>
+        <p>Task 4.</p>
+        <p>Создайте кнопку и функцию. При нажатии кнопки, функция окрашивает данную кнопку в background: red.</p>
+
+        <button class="btn4">OK</button>
+    </section>
+
+    <section>
+        <p>Task 5.</p>
+        <p>Создайте функцию, которая возвращает ваше имя. Имя вводится с input</p>
+
+        <input placeholder="Ваше имя" type="text" class="inp5">
+        <button class="btn5">OK</button>
+    </section>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
