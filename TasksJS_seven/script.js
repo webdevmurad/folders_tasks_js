@@ -122,3 +122,76 @@ function color(){
 btn10.onclick = () => {
     console.log( 'rgba' + '(' + color() + ',' + color() + ',' + color() + ');');
 }
+
+
+// Task 11
+// Вывод в консоль
+
+function f11() {
+    return 5;
+}
+f11();
+function t11(x, y) {
+    return x * y;
+}
+console.log(t11(5, f11()));
+
+// Task 12
+// Вывод в консоль
+
+let inp12 = document.querySelector('.inp12'),
+    btn12 = document.querySelector('.btn12');
+btn12.onclick = () => {
+    i12 = +inp12.value;
+    function toNum(obj) {
+        return obj;
+    }
+    console.log(toNum(i12)); 
+}
+
+// Task 13
+// Вывод в консоль
+
+let inp13 = document.querySelector('.inp13'),
+    btn13 = document.querySelector('.btn13');
+
+btn13.onclick = () => {
+    function emptyInput(input) {
+        input = inp13.value.trim();
+        if(input == '') {
+            return alert(false);
+        }
+        else {
+            return alert(input);
+        }
+    }
+    emptyInput();
+}
+
+
+// Task 14
+// Вывод на экран
+
+let inp14 = document.querySelector('.inp14'),
+    btn14 = document.querySelector('.btn14');
+
+btn14.onclick = () => {
+    function number(num) {
+        num = +inp14.value;
+        if (num % 2 == 0) {
+            return alert(true);
+        }
+        else {
+            return alert(false);
+        }
+    }
+    number();
+}
+
+// Task 15
+// Вывод в консоль
+
+document.querySelector('.task15').onmousemove = () => {
+    console.log('move');
+}
+
