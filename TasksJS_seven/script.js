@@ -195,3 +195,47 @@ document.querySelector('.task15').onmousemove = () => {
     console.log('move');
 }
 
+// Task 16
+// Вывод в консоль
+
+document.querySelector('.task16').onmouseenter = () => {
+    console.log('enter');
+}
+
+// Task 17
+// Вывод в консоль
+
+document.querySelector('.task17').onmouseleave = () => {
+    console.log('leave');
+}
+
+// Task 18
+// Вывод на экран
+
+let task18 = document.querySelector('.task18');
+
+task18.onclick = function() {
+    this.style.background = 'red';
+}
+
+// Task 19
+// Вывод на экран
+
+let task19 = document.querySelector('.task19');
+
+task19.onclick = () => {
+    this.style.background = 'red';
+}
+
+// Task 20
+// Вывод на экран
+
+let go = document.querySelectorAll('.go');
+console.log(go);
+
+for (let i = 0; i < go.length; i++) {
+    console.log(go);
+    go[i].onclick = function() {
+        this.style.background = 'red';
+    }
+}
