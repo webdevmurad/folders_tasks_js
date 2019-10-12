@@ -243,9 +243,166 @@ function func_10() {
 }
 func_10();
 
+// Task 11. 
+// Создайте функцию func_11, которая 
+// вернет следующую строку: 10 1 9 2 8 3 .. 1 10. 
+// Решаем через while.
+
+let task_11 = document.querySelector('.task_11');
 
 
 
+function func_11() {
+    let z = 1;
+    let x = 10;
+    while (z < 10 || x > 0) {
+        task_11.innerHTML += x + ' ';
+        task_11.innerHTML += z + ' ';
+        
+        z++;
+        x--;
+    }
+}
 
+func_11();
 
+// Task 12. 
+// Прочитайте о цикле do while. Напишите код:
+// let a = 0;
+// do
+//     console.log('do while work');
+// while (a < 0);
 
+// let b = 0;
+// while (b < 0) {
+//     console.log('while work');
+// }
+// изучите вывод. Как видите, цикл do while срабатывает 
+// минимум один раз в любом случае. Т.е.вначале идет 
+// срабатывание, а потом проверка.
+
+let a = 0;
+do {
+    console.log('do while work');
+} while (a < 0);
+
+let b = 0;
+while(b < 0) {
+    console.log('while work');
+}
+
+// Task 13. 
+// Напишите функцию func_13 которая возвращает 
+// строку, от 100 до 0 включительно.
+// Используем цикл do while.
+
+let task_13 = document.querySelector('.task_13');
+
+function func_13() {
+    let a = 101;
+    do {
+        a--;
+        task_13.innerHTML += a + ' ';
+        console.log(a);
+    } while (a >= 1);
+}
+func_13();
+
+// Task 14. 
+// Стаханов в первый день своей работы добыл 5 тонн угля. 
+// Во второй - на 30 % больше от предыдущего дня. 
+// В третий тоже на 30% больше от предыдущего дня и т.д. 
+// Напишите функцию func_14 которая вернет день, когда 
+// Стаханова побьют все, кто с ним работает, этот день наступит тогда, 
+// когда Стаханов в день добудет 132 тонны угля.
+// Используйте для решения do while.
+
+let task_14 = document.querySelector('.task_14');
+
+function func_14() {
+    let day = 1;
+    let ton = 5;
+    do {
+        ton = ton + (ton / 100 * 30);
+        if (ton > 132) {
+            task_14.innerHTML += day;
+            break;
+        }
+        day++;
+    } while (day < 30); 
+}
+func_14();
+
+// Task 15. 
+// Гермиона Грейнджер в первый день наварила 1.1 литра зелья. 
+// Во второй день на 0.3 литра зелья больше. 
+// Напишите функцию func_15, которая вернет день, когда в 
+// Хоргвардсе не останется пустых котлов (суммарный объем котлов в замке 568 литров). 
+// Обратите внимание, что вам нужно найти суммарных объем сваренного зелья, 
+// а не дневной объем. Используем do while.
+
+let task_15 = document.querySelector('.task_15');
+
+function func_15() {
+    let potion = 1.1;
+    let day = 1;
+
+    do {
+        potion = potion + 0.3;
+        if (potion > 568) {
+            task_15.innerHTML += day;
+            break;
+        }
+        day++;
+    } while (day < 10000);
+}
+func_15();
+
+// Task 16. 
+// На странице есть три параграфа p.task-16. 
+// Используя цикл do ..while посчитайте количество 
+// параграфов p.task-16 и если число четное - верните значение, 
+// если нет - верните false. Код напишите в функции func_16.
+
+let task_16 = document.querySelectorAll('.task_16 p'),
+    task_div = document.querySelector('.task_16');
+
+function func_16() {
+    let i = 0;
+    do {
+        par = +task_16.length;
+        if (par % 2 == 0) {
+            task_div.innerHTML += par;
+        } else {
+            return task_div.innerHTML += false;
+        }
+    } while (i < task_16.lenght);
+}
+func_16();
+
+// Task 17. 
+// На странице есть три параграфа p.task-16. 
+// Используя цикл do ..while выведите в первый p.task-16 - число 1, 
+// во второй 2 и т.д. Решение оформите в виде функции func_17.
+
+let task_17 = document.querySelectorAll('.task_17 p'),
+    task_wrap = document.querySelector('.task_17');
+
+function func_17() {
+    let i = 0;
+    do {
+        par= +task_17.length;
+        console.log(par);
+        if (par == i) {
+            task_17[1].innerHTML += '1';
+        }
+        else if (par == 2) {
+            task_17.innerHTML += '2';
+        }
+        else if (par == 3) {
+            task_17.innerHTML += '3';
+        }
+        i++;
+    } while (i < task_17.length);
+}
+func_17();
