@@ -303,7 +303,6 @@ function func_13() {
     do {
         a--;
         task_13.innerHTML += a + ' ';
-        console.log(a);
     } while (a >= 1);
 }
 func_13();
@@ -385,24 +384,81 @@ func_16();
 // Используя цикл do ..while выведите в первый p.task-16 - число 1, 
 // во второй 2 и т.д. Решение оформите в виде функции func_17.
 
-let task_17 = document.querySelectorAll('.task_17 p'),
-    task_wrap = document.querySelector('.task_17');
+let task_17 = document.querySelectorAll('.task_17 p');
 
 function func_17() {
     let i = 0;
     do {
-        par= +task_17.length;
-        console.log(par);
-        if (par == i) {
-            task_17[1].innerHTML += '1';
-        }
-        else if (par == 2) {
-            task_17.innerHTML += '2';
-        }
-        else if (par == 3) {
-            task_17.innerHTML += '3';
-        }
-        i++;
+        par = +task_17.length;
+        
+        task_17[0].innerHTML += '1';
+        task_17[1].innerHTML += '2';
+        task_17[2].innerHTML += '3';
+        break;
     } while (i < task_17.length);
 }
 func_17();
+
+// Task 18. 
+// На странице есть три параграфа p.task-18. 
+// Используя цикл do ..while выведите в первый p.task-18 - число 
+// равное количеству параграфов p.task-18, во второй на единицу меньше и т.д. 
+// Решение оформите в виде функции func_18.
+
+let task_18 = document.querySelectorAll('.task_18 p');
+
+function func_18() {
+    let z = 0;
+    
+    do {
+       task_18[z].innerHTML += task_18.length -z;
+       for (let i = 0; i < z; i++) {
+           task_18[z].innerHTML += i;
+       }
+       z++;
+    } while(z < task_18.length);
+} 
+func_18();
+
+// Task 19. 
+// Напишите функцию func_19, 
+// которая возвращает строку вида: 1*3*5*7*9*11*13*15*17*19. 
+// Решите с помощью do while.
+
+let task_19 = document.querySelector('.task_19');
+
+function func_19() {
+    let n = 20;
+    let i = 0;
+    do {
+        for (let i = 0; i < 20; i++) {
+            if (i % 2 == 0) {
+                task_19.innerHTML += '*';
+            } else {
+                task_19.innerHTML += i;
+            }
+        }
+        n--;
+        break;
+    } while (i < n);
+}
+func_19();
+
+// Task 20. Напишите функцию func_20, которая возвращает строку вида:
+//     1 * * *
+//     * 1 * *
+//     * * 1 *
+//     * *  * 1
+
+let task_20 = document.querySelector('.task_20');
+
+for (let i = 0; i < 4; i++) {
+    for (let k = 0; k < 4; k++) {
+        if (k == i) {
+            task_20.innerHTML += '1';
+        } else {
+            task_20.innerHTML += '*';
+        }
+    }
+    task_20.innerHTML += '<br>';
+}
