@@ -1,0 +1,30 @@
+.u-1 {
+    background: goldenrod;
+}
+
+.u-2 {
+    width: 50px;
+    height: 50px;
+}
+
+.u-3 {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.u-4 {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.u-5 {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.active {
+    background: yellow;
+}
