@@ -93,3 +93,50 @@ function func_7() {
     }
 }
 func_7();
+
+// Task 8.
+// Напишите функцию func-8, которая будучи запущенной, 
+// присваивает всем элементам p.u-1 атрибут title 
+// со значением test-data.
+
+function func_8() {
+    let task8 = document.querySelectorAll('.u-1');
+    for(let i = 0; i < task8.length; i++) {
+        task8[i].setAttribute('title', 'test-data');
+    }
+}
+func_8();
+
+// Task 9.
+// С помощью цикла получите кнопки .u-9. 
+// Добавьте на них событие onclick которое 
+// запускает функцию func-9. Функция возращает 
+// data атрибут элемента, по которому кликнули.
+
+function func_9() {
+    let btn9 = document.querySelectorAll('.u-9');
+    for(let i = 0; i < btn9.length; i++) {
+        btn9[i].onclick = function() {
+            this.setAttribute('title', 'test');
+        }
+    }
+}
+func_9();
+
+// Task 10.
+// Напишите функцию func-10, которая при клике 
+// на кнопке .u-10__button читает атрибут валюты 
+// data-currency и на основании этого выводит 
+// в p.u-10__out коэффициент данной валюты по отношению 
+// к доллару. Коэффициент возьмите приблизительно из 
+// интернета. Считается, что пользователь 
+// всегда вводит валюту в долларах.
+let btn10 = document.querySelector('.u-10__button');
+let inp10 = document.querySelector('.inp10');
+let ptext = document.querySelector('.u-10__out');
+
+btn10.onclick = function() {
+    let dlr = this.getAttribute('data-currency');
+    i10 = +inp10.value;
+    ptext.innerHTML = dlr * i10;
+}
