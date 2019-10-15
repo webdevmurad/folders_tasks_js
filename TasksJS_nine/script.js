@@ -140,3 +140,175 @@ btn10.onclick = function() {
     i10 = +inp10.value;
     ptext.innerHTML = dlr * i10;
 }
+
+// Task 11.
+// Напишите функцию func-11, которая при клике 
+// на кнопке .u-11__button читает атрибут валюты data-currency 
+// и на основании этого выводит в p.u-11__out перевод 
+// валюты введенной пользователем в input.u-11__input в 
+// указанную валюту. Считается, что пользователь всегда 
+// вводит валюту в долларах.
+
+let btn11 = document.querySelector('.u-11__button'),
+    inp11 = document.querySelector('.inp11'),
+    p11 = document.querySelector('.u-11__out');
+
+btn11.onclick = function() {
+    let dol = this.getAttribute('data-currency');
+    i11 = +inp11.value;
+    p11.innerHTML = dol * i11;
+}
+
+// Task 12.
+// Создайте функцию func-12, которая создает 
+// через createElement элемент div, присваивает 
+// ему класс css-4 и возвращает данный элемент
+
+function func_12() {
+    let s12 = document.createElement('div');
+    s12.classList.add('css-4');
+    console.log(s12);
+}
+func_12();
+
+// Task 13.
+// Создайте функцию func-13, которая создает 
+// элемент span.span-13 с текстом 13 через createElement 
+// и вставляет его в p.u-13 (append).
+
+let s13 = document.querySelector('.sect-13');
+
+function func_13() {
+    let span = document.createElement('span');
+    span.innerHTML = '13';
+    span.classList.add('span-13');
+    console.log(span);
+    s13.appendChild(span);
+}
+func_13();
+
+// Task 14.
+// Создайте функцию func-14, которая создает 
+// элемент span.span-14 с текстом 14 через createElement 
+// и вставляет его в p.u-14 (prepend).
+
+let s14 = document.querySelector('.sect-14');
+
+function func_14() {
+    let span = document.createElement('span');
+    span.innerHTML = '14';
+    span.classList.add('span-14');
+    console.log(span);
+    s14.prepend(span);
+}
+func_14();
+
+// Task 15.
+// Создайте функцию func-15, которая создает 
+// элемент span.span-15 с текстом 15 через
+//  createElement и вставляет его в p.u-15 (before).
+
+let s15 = document.querySelector('.sect-15');
+
+function func_15() {
+    let span = document.createElement('span');
+    span.innerHTML = '15';
+    span.classList.add('span-15');
+    s15.before(span);
+
+}
+func_15();
+
+// Task 16.
+// Создайте функцию funct-16, которая создает 
+// элемент button.u-16 c текстом Push. Повесьте 
+// на данный элемент событие onclick со стрелочной 
+// функцией, которая в консоль выводит текст u-16. 
+// И после добавления события добавьте данный элемент 
+// на страницу в div.u-16__out. 
+// Проверьте работоспособность события.
+
+let s16 = document.querySelector('.u-16__out');
+
+function func_16() {
+    let btn = document.createElement('button');
+    btn.innerHTML = 'Push';
+    s16.appendChild(btn);
+    btn.onclick = () => {
+        alert('Push');
+    }
+
+}
+func_16();
+
+// Task 17.
+// Создайте функцию, funct-17, которая при запуске создаст элемент 
+// p c текстом 17 и заменит этим элементом div.u-17 (replaceWith)
+
+let p = document.querySelector('.p17');
+
+function func_17() {
+    let d17 = document.createElement('div');
+    d17.classList.add('u-17');
+    p.replaceWith(d17);
+}
+func_17();
+
+// Task 18.
+// C помощью цикла повесьте на div.out-18 функцию func-18. 
+// Данная функция дожна удалять элемент, на котором произошел 
+// клик из DOM. Функция должна возвращать удаленный элемент.
+
+function func_18() {
+    let d18 = document.querySelector('.out-18');
+    d18.onclick = () => {
+        d18.removeChild(d18.firstChild);
+        console.log(d18);
+    }
+    
+}
+
+func_18();
+
+// Task 19.
+// Создайте функцию func-19, которая принимает параметр текст. 
+// Создает элемент li, вставляет в него указанный текст, и 
+// добавляет на страницу в ul.u-19 в конец списка.
+
+let s19 = document.querySelector('.sec-19');
+
+function func_19 (text){
+    let li = document.createElement('li');
+    li.innerHTML = text;
+    s19.appendChild(li);
+}
+func_19("Добавил первый пункт");
+
+// Task 20.
+// Доработайте предыдущее задание. Допишите функцию 
+// func-20 которая может принимать текст от пользователя 
+// и вставлять в список ul.u-20. Также добавьте 
+// checkbox - важное, при этом созданный li получает 
+// класс .css-5.
+
+let s20 = document.querySelector('.sec-20'),
+    i20 = document.querySelector('.inp20'),
+    btn20 = document.querySelector('.btn20'),
+    ch = document.querySelector('.check');
+
+function func_20() {
+    btn20.onclick = function (text) {
+        text = i20.value;
+        let le = document.createElement('li');
+        le.classList.add('u-20');
+        le.innerHTML = text;
+        s20.appendChild(le); 
+        if (ch.checked) {
+            le.classList.add('css-5');
+        }   
+    };
+    
+    
+}
+func_20();
+
