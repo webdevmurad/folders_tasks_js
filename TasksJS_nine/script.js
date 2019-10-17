@@ -307,8 +307,7 @@ function func_20() {
             le.classList.add('css-5');
         }   
     };
-    
-    
+
 }
 func_20();
 
