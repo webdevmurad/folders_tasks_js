@@ -232,11 +232,8 @@ let arr13 = [0, 2, 3, 7, 8, 5, 11],
     inp13 = document.querySelector('.u-13__input');
 
 document.querySelector('.u-13__button').onclick = () => {
-    for (i = arr13.length; i > 0; i--) {
-        arr = arr13.length - i;
-        console.log(arr13);
-        ar[i] = arr13[arr];
+    for (i = arr13.length - 1; i >= 0; i--) {
+        ar.push(arr13[i]);
         div13.textContent = ar;
-        console.log(ar);
     }
 }
