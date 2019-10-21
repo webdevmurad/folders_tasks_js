@@ -237,3 +237,131 @@ document.querySelector('.u-13__button').onclick = () => {
         div13.textContent = ar;
     }
 }
+
+
+// Task 14.
+// Создайте инпут, куда пользователь может ввести число элементов в массиве. 
+// Создайте функцию, которая прочитает введенное число и создаст массив такой длины,
+// причем каждый элемент - это случайное число от 0 до 100. 
+// Массивы выведите на страницу.
+
+let inp14 = document.querySelector('.u-14__input'),
+    div14 = document.querySelector('.out-14'),
+    arr14 = [];
+
+document.querySelector('.u-14__button').onclick = () => {
+    i14 = +inp14.value;
+    for(let i = 0; i < i14; i++) {
+        let arr = Math.floor(Math.random() * (101 - 0) + 0);
+        arr14.push(arr);
+        div14.textContent = arr14;
+    }
+}
+
+// Task 15.
+// Создайте массив arr15. Напишите функцию, которая создаст новый массив, 
+// в который входят только четные элементы массива arr15 (элементы с четным индексом). 
+// Выведите на экран.
+
+let div15 = document.querySelector('.out-15'),
+    arr15 = [1, 4, 5, 6, 9, 15, 28, 33, 44, 66, 76, 88, 99];
+
+function func_15() {
+    for(let i = 0; i < arr15.length; i++) {
+        if (arr15[i] % 2 == 0 ) {
+            div15.textContent += arr15[i] + ' ';
+        }
+    }
+}
+
+func_15();
+
+// Task 16.
+// Создайте button.u-16__button. Объявите массив arr16_1 и arr16_2. 
+// По нажатию на кнопку примените к массивам метод concat ( читать за метод concat). 
+// Результат применения concat выводите на страницу в div.out-16.
+
+// let arr16_1 = [3, 5, 7 ];
+// let arr16_2 = [2, 4, 6 ];
+
+let div16 = document.querySelector('.out-16');
+let arr16_1 = [3, 5, 7 ];
+let arr16_2 = [2, 4, 6 ];
+document.querySelector('.u-16__button').onclick = () => {
+    div16.textContent = arr16_1.concat(arr16_2);
+}
+
+// Task 17.
+// Напишите функцию funcConcat, которая эмулирует работу метода concat. 
+// Программа должна:
+
+// Перебирает второй массив и его элементы добавляет в первый массив.
+// Выводит массив на страницу.
+
+let arr17_1 = [3, 5, 7 ];
+let arr17_2 = [2, 4, 6 ];
+let div17 = document.querySelector('.out-17');
+
+document.querySelector('.u-17__button').onclick = () => {
+    for (let i = 0; i < arr17_2.length; i++) {
+        arr17_1.push(arr17_2[i]);
+        div17.textContent = arr17_1;
+    }
+}
+
+// Task 18.
+// Создайте button.u-18__button и input.u-18__input. 
+// Объявите массив arr18 . По нажатию на кнопку примените к массивам 
+// метод includes, который проверяет есть ли в массиве значение введенное в input. 
+// ( читать за метод includes). 
+// Результат применения includes выводите на страницу в div.out-18.
+
+// let arr16_1 = [3, 5, 7, 11, 12, 13, 14 ];
+
+let inp18 = document.querySelector('.u-18__input'),
+    div18 = document.querySelector('.out-18');
+let arr18 = [3, 5, 7, 11, 12, 13, 14 ];
+
+
+document.querySelector('.u-18__button').onclick = () => {
+    i18 = +inp18.value;
+    div18.textContent = arr18.includes(i18);
+}
+
+// Task 19.
+// Напишите функцию funcIncludes, которая эмулирует работу метода includes. 
+// Программа должна:
+
+// Перебирает второй массив и сравнивать если введенный элемент 
+// совпал с текущим - прекращать работу цикла и выводить true.
+// Если совпадений нет - false.
+
+let inp19 = document.querySelector('.u-19__input'),
+    div19 = document.querySelector('.out-19');
+let arr19 = [3, 5, 7, 11, 12, 13, 14 ];
+
+document.querySelector('.u-19__button').onclick = () => {
+    for (let i = 0; i < arr19.length; i++) {
+
+        i19 = +inp19.value;
+        if (i19 === arr19[i]) {
+            div19.textContent = true;
+            break;
+        } else {
+            div19.textContent = false;
+        }
+    }
+}
+
+// Task 20.
+// Объявите массив arr20. Создайте кнопку, по нажатию которую 
+// к массиву применяется метод join ( читать за метод join). 
+// Результа выведите на страницу.
+
+let div20 = document.querySelector('.out-20');
+let arr20 = [1, 2, 3, 4, 5, 7];
+
+document.querySelector('.btn20').onclick = () => {
+    arr20.join();
+    div20.textContent = arr20;
+}
