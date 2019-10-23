@@ -1,0 +1,15 @@
+section {
+    padding: 20px;
+    border-bottom: 2px solid #000;
+}
+
+.black {
+    width: 30px;
+    height: 30px;
+    background: black;
+}
+.white {
+    width: 30px;
+    height: 30px;
+    background: white;
+}
