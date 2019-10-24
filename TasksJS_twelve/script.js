@@ -128,24 +128,33 @@ for (let i = 0; i < a.length; i++) {
 // Создайте массив шахматную доску. Белые - 0, черные - 1. Выведите на страницу.
 
 let div11 = document.querySelector('.out-11');
-let arr = [0, 1];
+let arr = [];
+let number = 0;
 for ( let i = 0; i < 8; i++) {
-    for (let k = 0; k <= 8; k++) {
-        if (i % 2 == 0) {
-            if (k % 2 == 0) {
-                div11.innerHTML += arr[0];
+    for (let k = 0; k < 8; k++) {
+        if(i % 2 == 0) {
+            if(k % 2 == 0) {
+                arr.push(0);
             } else {
-                div11.innerHTML += arr[1]; 
+                arr.push(1);
             }
         }
         if(i % 2 !== 0) {
-            if (k % 2 !== 0) {
-                div11.innerHTML += arr[0];
+            if(k % 2 !== 0) {
+                arr.push(0);
             } else {
-                div11.innerHTML += arr[1]; 
+                arr.push(1);
             }
         }
+        div11.innerHTML += arr[k];
     }
+    if(i % number.length == 0 ) {
+        arr.reverse();
+        
+    } else {
+        arr.reverse();
+    }
+    number++;
     div11.innerHTML += '<br>';
 }
 
@@ -155,37 +164,34 @@ for ( let i = 0; i < 8; i++) {
 // шахматной доски - блоки div в нужном порядке, закранные цветом.
 
 let div12 = document.querySelector('.out-12'),
-    b = document.createElement("div"),
+    d = document.createElement("div"),
     w = document.createElement("div");
 
-b.className = 'black';
-w.className = 'white'; 
-
-arr12 = [w, b];
 
 function chess() {
-    for (let i = 0; i < 8; i++) {
-        for (let k = 0; k < 8; k++ ) {
-            if (i % 2 == 0) {
-                if (k % 2 == 0) {
-                    div12.innerHTML += arr12[w];
-                } else {
-                    div12.innerHTML += arr12[b];
+    let b = 0;
+    let a = [];
+    let out = '';
+        for (let i = 0; i < 8; i++) {
+            let c = [];
+            for (let k = 0; k < 8; k++ ) {
+                if (b % 2 == 0) {
+                    out +='<div class="black"></div>';
+                }else {
+                    out +='<div class="white"></div>';
                 }
+            b++;
             }
-            if (i % 2 !== 0) {
-                if (k % 2 !== 0) {
-                    div12.innerHTML += arr12[w];
-                } else {
-                    div12.innerHTML += arr12[b];
-                }
-            }       
+            a[i] = c;
+            div12.innerHTML = '<br>';
         }
-        div12.innerHTML += '<br>';
-    }
+        
+    console.log(a);
+    div12.innerHTML = out;
 }
 
 chess();
+
 
 
 
