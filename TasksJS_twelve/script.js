@@ -164,30 +164,42 @@ for ( let i = 0; i < 8; i++) {
 // шахматной доски - блоки div в нужном порядке, закранные цветом.
 
 let div12 = document.querySelector('.out-12'),
-    d = document.createElement("div"),
-    w = document.createElement("div");
+    d = document.querySelector('.black'),
+    w = document.querySelector('.white');
 
+let arr12 = [];
+let out = '';
+let num12 = 0;
 
 function chess() {
-    let b = 0;
-    let a = [];
-    let out = '';
-        for (let i = 0; i < 8; i++) {
-            let c = [];
-            for (let k = 0; k < 8; k++ ) {
-                if (b % 2 == 0) {
-                    out +='<div class="black"></div>';
-                }else {
-                    out +='<div class="white"></div>';
+    for (let i = 0; i < 8; i++) {
+        for (let k = 0; k < 8; k++) {
+            if (i % 2 == 0) {
+                if (k % 2 == 0) {
+                    arr12.push('<div class="black"></div>');
+                } else {
+                    arr12.push('<div class="white"></div>');
                 }
-            b++;
             }
-            a[i] = c;
-            div12.innerHTML = '<br>';
+            if (i % 2 !== 0) {
+                if (k % 2 !== 0) {
+                    arr12.push('<div class="black"></div>');
+                } else {
+                    arr12.push('<div class="white"></div>');
+                }
+            }
+            console.log(arr12[k]);
+            div12.innerHTML += arr12[k]; 
         }
-        
-    console.log(a);
-    div12.innerHTML = out;
+        if (num12 % 2 == 0) {
+            arr12.reverse();
+        } else {
+            arr12.reverse();
+        }
+        num12++;
+        div12.innerHTML += '<br>';
+    }
+    
 }
 
 chess();
