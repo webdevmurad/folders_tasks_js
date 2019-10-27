@@ -161,3 +161,73 @@ btn7.onclick = function() {
 // При нажатии кнопки - удаляйте значение с соответствующим ключем. 
 // Выводите массив на страницу.
 
+let btn8 = document.querySelector('.btn8'),
+    inpDel = document.querySelector('.delInp');
+let out8 = '';
+
+btn8.onclick = function() {
+    inpD = inpDel.value.trim();
+    for (let key in a7) {
+        if (inpD == key) {
+            delete a7[inpD];
+        }
+    }
+    for (let key in a7) {
+        out8 += ` ${key} : ${a7[key]} <br> `;
+        document.querySelector('.out-8').innerHTML = out8;
+    }
+};
+
+// Task 9.
+// Добавьте к предыдущей задачи input.u9-delete-value__input и кнопку. 
+// При нажатии кнопки - удаляйте записи с соответствующим значением. 
+// Выводите массив на страницу.
+
+let btn9 = document.querySelector('.btn9'),
+    inpDel9 = document.querySelector('.delInp9');
+let out9 = '';
+
+btn9.onclick = function() {
+    inpD9 = inpDel9.value.trim();
+    for (let key in a7) {
+        console.log(a7[key]);
+        if (inpD9 == a7[key]) {
+            delete a7[key];
+        }
+    }
+    for (let key in a7) {
+        out9 += ` ${key} : ${a7[key]} <br> `;
+        document.querySelector('.out-9').innerHTML = out9;
+    }
+};
+
+// Task 10.
+// Добавьте к предыдущей задачи input.u10-has-key__input и кнопку. 
+// При нажатии кнопки - возвращайте true если 
+// такой ключ есть в массиве, и false если нет.
+
+let btn10 = document.querySelector('.btn10'),
+    inpDel10 = document.querySelector('.u10-has-key__input');
+let out10 = '';
+let tf = false;
+
+btn10.onclick = function() {
+    inpD10 = inpDel10.value.trim();
+    for (let key in a7) {
+        console.log(inpD10);
+        if (inpD10 === key) {
+            tf = true;
+            alert(tf);
+            break;
+        } else {
+            tf = false;
+            alert(tf);
+            break;
+        }
+    }
+    for (let key in a7) {
+        out10 += ` ${key} : ${a7[key]} <br> `;
+        document.querySelector('.out-10').innerHTML = out10;
+    }
+};
+
