@@ -119,9 +119,45 @@ for (let key in a5) {
 // Выведите массив на страницу.
 
 let out6 = document.querySelector('.out-6');
+let out66 = '';
 let a6 = {
     "name": "Murad",
     "age": 25,
     "sex": "male",
     "height": 178
+};
+
+for (let key in a6) {
+    out66 += key + " : " + a6[key] + '<br>';
 }
+out6.innerHTML = out66;
+
+// Task 7.
+// Создайте ассоциативный массив a7, 
+// два input (u7-key__input, u7-value__input) и кнопку. 
+// При нажатии кнопки добавляйте в массив новое значение 
+// с соответствующим ключем. Выводите массив на страницу.
+
+let a7 = {};
+let out7 = '';
+let inpKey = document.querySelector('.input1'),
+    inpVal = document.querySelector('.input2'),
+    btn7 = document.querySelector('.btn7');
+
+btn7.onclick = function() {
+    inpK = inpKey.value.trim();
+    inpV = inpVal.value.trim();
+    if (inpK != '' && inpV != '') {
+        a7[inpK] = inpV;
+        for (let key in a7) {
+            out7 += ` ${key} : ${a7[key]} <br> `;
+        }
+    }
+    document.querySelector('.out-7').innerHTML = out7;
+};
+
+// Task 8.
+// Добавьте к предыдущей задачи input.u8-key__input и кнопку. 
+// При нажатии кнопки - удаляйте значение с соответствующим ключем. 
+// Выводите массив на страницу.
+
