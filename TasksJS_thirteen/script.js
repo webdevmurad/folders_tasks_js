@@ -208,26 +208,84 @@ btn9.onclick = function() {
 
 let btn10 = document.querySelector('.btn10'),
     inpDel10 = document.querySelector('.u10-has-key__input');
-let out10 = '';
-let tf = false;
 
 btn10.onclick = function() {
     inpD10 = inpDel10.value.trim();
-    for (let key in a7) {
-        console.log(inpD10);
-        if (inpD10 === key) {
-            tf = true;
-            alert(tf);
-            break;
-        } else {
-            tf = false;
-            alert(tf);
-            break;
-        }
-    }
-    for (let key in a7) {
-        out10 += ` ${key} : ${a7[key]} <br> `;
-        document.querySelector('.out-10').innerHTML = out10;
+    if (a7[inpD10]) {
+        alert(true);
+    } else {
+        alert(false);
     }
 };
+
+// Task 11.
+// Создайте массив, который описывает метро киевского метрополитена, выведите его на страницу.
+
+// a11 = {
+// 	"red" : ['Академгородок',...],
+// 	"green" : 
+// }
+
+let out111 = document.querySelector('.out-11');
+let out1111 = '';
+
+let a11 = {
+	"red" : ["Академгородок", "Житомирская", "Святошин", "Нивки", "Берестейская", "Шулявская", "Политехнический институт", "Вокзальная", "Университет", "Театральная", "Крещатик", "Арсенальная", "Днепр", "Гидропарк", "Левобережная", "Дарница", "Черниговская", "Лесная"], 
+    "blue" : ["Героев Днепра", "Минская", "Оболонь", "Почайна", "Тараса Шевченко", "Контрактовая площадь", "Почтовая площадь", "Майдан Незалежности", "Площадь Льва Толстого", "Олимпийская", "Дворец «Украина", "Лыбедская", "Демиевская", "Голосеевская", "Васильковская", "Выставочный центр", "Ипподром", "Теремки"],
+    "green" : ["Сырец", "Дорогожичи", "Лукьяновская", "Золотые ворота", "Дворец спорта", "Кловская", "Печерская", "Дружбы народов", "Выдубичи", "Славутич", "Осокорки", "Позняки", "Харьковская", "Вырлица", "Бориспольская", "Красный хутор"]
+}
+
+for (let key in a11) {
+    out1111 += key + ' : ' + a11[key] + '<br>';
+}
+
+out111.innerHTML = out1111;
+
+// Task 12.
+// Добавьте к предыдущей задаче select.u12-branch и кнопку. 
+// Пользователь может выбрать цвет ветки и нажать кнопку, 
+// после чего на страницу будут выведены только станции данной ветки.
+let out12 = document.querySelector('.out-12');
+document.querySelector('.btn12').onclick = () => {
+    let line = document.querySelector('.u12-branch');
+    for (let key in a11) {
+        if (line.value == key) {
+            out12.innerHTML = a11[key];
+        }
+    }
+}
+
+// Task 13.
+// Добавьте к предыдущей задаче кнопку button.u13-reverse 
+// которая при нажатии выводит станции ветки в обратном порядке. 
+// Внимание! Все подобные задачи не меняют массив, а меняют только вывод!!!
+
+let out13 = document.querySelector('.out-13');
+
+document.querySelector('.btn13').onclick = () => {
+    let line = document.querySelector('.u12-branch');
+    for (let key in a11) {
+        if (line.value == key) {
+            out13.innerHTML = a11[key].reverse();
+        }
+    }
+};
+
+// Task 14.
+// Добавьте к предыдущей задаче select.u14-find-station и кнопку. 
+// В select - пользователь может выбрать станцию, а вы перебирая 
+// массив - вывести ветку на которой эта станция находится.
+
+let out14 = document.querySelector('.out-14');
+
+document.querySelector('.btn14').onclick = () => {
+    let station = document.querySelector('.u14-find-station');
+    for (let key in a11) {
+        for (let i = 0; i < a11[key].length; i++) {
+            if (station.value == a11[key][i]) {
+                out14.innerHTML = key;
+            }
+        }
+    }
+}
 
