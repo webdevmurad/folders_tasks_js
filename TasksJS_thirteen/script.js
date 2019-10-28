@@ -289,3 +289,55 @@ document.querySelector('.btn14').onclick = () => {
     }
 }
 
+// Task 15.
+// Добавьте к предыдущему заданию 2 select где пользователь 
+// может выбрать 2 станции, и если они на одной ветке - то 
+// по нажатию на кнопку будет показано сколько станций между ними 
+// (сами станции не включаем. Если это соседние станции - то 0).
+
+let fromStat = document.querySelector('.valfrom'),
+    toStat = document.querySelector('.valto');
+let out15 = '';
+
+for(let key in a11) {
+    for (let k = 0; k < a11[key].length; k++) {
+        out15 += `<option >${a11[key][k]}</option>`;
+    }
+    fromStat.innerHTML = out15;
+    toStat.innerHTML = out15;
+}
+
+document.querySelector('.btn15').onclick = () => {
+    let fromS = fromStat.value,
+        toS = toStat.value,
+        fromKey = '',
+        toKey = '_';
+    for (let key in a11) {
+        let from = a11[key].indexOf(fromS);
+        if (from != -1) {
+            fromKey = key;
+        }
+        let to = a11[key].indexOf(toS);
+        if (to != -1) {
+            toKey = key;
+        }
+        if (toKey == fromKey && from >= to) {
+            document.querySelector('.out-15').textContent = from - to;
+            break;
+        } else if (fromKey == toKey && to >= from) {
+            document.querySelector('.out-15').textContent = to - from;
+            break;
+        } else {
+            document.querySelector('.out-15').textContent = 0;
+        }
+    } 
+};
+
+// Task 16.
+// Добавьте 3 radiobutton.u16-radio которые содержат value = red, green, blue - в 
+// соотвтествии с цветом веток метро. Добавьте пустой select.u16-select. 
+// При выборе radio - программа должна в select добавлять option с названиями 
+// станций метро. Т.е. выбрали radio(value="green") то внутрь select должны быть 
+// записаны option со станциями зеленой ветки. Выбрали red - select должен быть 
+// очищен и добавлены option со станциями красной ветки.
+
