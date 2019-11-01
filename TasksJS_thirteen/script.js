@@ -345,20 +345,21 @@ let lineMetro = document.querySelectorAll('.u16-radio');
 let metroL = document.querySelector('.u16-select');
 
 document.querySelector('.btn16').onclick = () => {
-    let option16 = document.createElement('option');
-    metroL.append(option16);
-    for (let i = 0; i < lineMetro.length; i++) {
-        console.log(lineMetro[i]);
-    }
-    for (let key in a11) {
-        if (lineMetro[0].value == key) {
-            option16.textContent = a11[key];
-        } else if (lineMetro[1].value == key) {
-            option16.textContent = a11[key];
-        } else if (lineMetro[2].value == key) {
-            option16.textContent = a11[key];
+    let check = document.querySelectorAll('[name="check"]');
+    let branch;
+    for (let i = 0; i < check.length; i++) {
+        if (check[i].checked) {
+            branch = check[i].value;
         }
     }
+    console.log(branch);
+    let out = '';
+    metroL.innerHTML = '';
+    for (let i = 0; i < a11[branch].length; i++) {
+        out += `<option value="${a11[branch]}">${a11[branch][i]}</option>`
+    }
+    metroL.innerHTML = out;
+
 }
 
 // Task 17.
