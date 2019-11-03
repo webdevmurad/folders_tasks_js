@@ -388,6 +388,47 @@ for (let key in a17) {
 
 let div18 = document.querySelector('.out-18');
 
-for (let key in a17) {
-    console.log(a17[key]);
+
+
+
+// Task 19.
+// Создайте ассоциативный массив где ключами являются страны азии, 
+// а вложенными массивами - ассоциативный массив содержащий название столицы, 
+// количество населения, площадь. Выведите его на страницу.
+
+let div19 = document.querySelector('.out-19');
+let out19 = '';
+let a19 = {
+    'Китай' : ['Шанхай ', 9597000 , 1386000000],
+    'Индия' : ['Нью-Дели ', 3287000 , 1339000000],
+    'Япония' : ['Токио ', 377973 , 126800000],
+    'Саудовская Аравия' : ['Эр-Рияд ', 2150000 , 33000000]
+}
+for (let key in a19) {
+    out19 += key + ':' + a19[key] + '<br>';
+}
+div19.innerHTML += out19;
+
+// Task 20.
+// Дополните массив из задачи 19 так, чтобы пользователь мог 
+// сам выбирать страну в select, а необходимая информация 
+// подтягивалась на страницу.
+
+let div20 = document.querySelector('.out-20');
+let sel20 = document.querySelector('.u20-select');
+let out20 = '';
+
+for (let key in a19) {
+    for (let i = 0; i < a19[key].length; i++){
+        out20 = `<option value="${key}">${key}</option>`
+    }
+    sel20.innerHTML += out20;
+}
+
+sel20.onchange = () => {
+    for (let key in a19) {
+        if(sel20.value === key) {
+            div20.innerHTML = a19[key];
+        }
+    }
 }
