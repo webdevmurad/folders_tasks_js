@@ -388,8 +388,22 @@ for (let key in a17) {
 
 let div18 = document.querySelector('.out-18');
 
-
-
+for (let i = 0; i < a17.red.length; i++) {
+    if(a17.red[i][1]) {
+        div18.innerHTML += a17.red[i];
+    }
+}
+for (let i = 0; i < a17.blue.length; i++) {
+    if(a17.red[i][1]) {
+        div18.innerHTML += a17.red[i];
+    }
+}
+for (let i = 0; i < a17.green.length; i++) {
+    if(a17.red[i][1]) {
+        div18.innerHTML += a17.red[i];
+    }
+}
+                            
 
 // Task 19.
 // Создайте ассоциативный массив где ключами являются страны азии, 
