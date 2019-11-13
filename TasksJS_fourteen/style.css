@@ -1,0 +1,46 @@
+html, body {
+    font-family: serif;
+}
+body {
+    margin: 20px;
+}
+
+.container {
+    width: 400px;
+    min-height: 400px;
+    margin: auto;
+}
+.pricing-table {
+    height: 100%;
+    background-color: #71C9FF;
+    text-align: center;
+}
+
+.package-name {
+    padding-top: 30px;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+.price {
+    padding-top: 10px;
+    font-size: 30px;
+    color: white;
+}
+.disclaimer {
+    padding-top: 10px;
+    font-size: 30px;
+    color: white;
+}
+.features {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 150px;
+}
+
+.features li {
+    display: block;
+    font-size: 20px;
+    color: white;
+}
