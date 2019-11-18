@@ -272,3 +272,126 @@ document.querySelector('.b-13').onclick = function () {
     a13.add(6);
     t13(a13, out13);
 }
+
+// Task 14
+
+// Напишите функцию, которая принимает set и выводит его на страницу в указанный элемент. 
+// Элемент задавать как второй параметр. 
+// Третий параметр - разделитель.
+// Действия должны запускаться при вызове функции t14.
+// Т.е. ввели в качестве разделителя дефис и вывод на страницу 1-2-3- (без пробелов).
+
+function t14(a14, out14, ras) {
+    let a14_res = Array.from(a14);
+    for (let i in a14_res) {
+        out14.innerHTML += a14_res[i] + ras;
+    }
+}
+
+document.querySelector('.b-14').onclick = () => {
+    let out14 = document.querySelector('.out-14');
+    let ras = '-';
+    let a14 = new Set();
+    a14.add(1);
+    a14.add(2);
+    a14.add(3);
+    a14.add(4);
+    a14.add(5);
+    a14.add(6);
+    t14(a14, out14, ras);
+}
+
+// Task 15
+
+// Дан массив arr15 = [
+//     [1,0],
+//     [1,0],
+//     [2,0]
+//     ] . 
+//     Добавьте вложенные в него массивы в набор. 
+//     Изучите результат. Результирующий набор a15_res выведите на страницу. 
+//     Добавление сделайте через цикл. Действия должны запускаться при вызове функции t15. 
+//     Результат операции запишите в a15_res.
+
+let a15_res = new Set();
+
+function t15(arr15) {
+
+    for (let i in arr15) {
+        a15_res.add(arr15[i]);  
+
+    }
+    console.log(a15_res)
+    
+}
+
+document.querySelector('.b-15').onclick = () => {
+    arr15 = [ [1,0], [1,0], [2,0] ];
+    t15(arr15, out15);
+}
+
+// Task 16.
+
+// Дан массив a16 = [ { Ivan: 1 }, { Ivan: 1 }, { Ivan: 2 }, { Serg: 0 } ]. 
+// Добавьте вложенные в него массивы в набор. Изучите результат. 
+// Результирующий набор выведите в консоль. Добавление сделайте через цикл. 
+// Действия должны запускаться при вызове функции t16. 
+// Результат операции запишите в a16_res.
+
+let a16_res = new Set();
+
+function t16(a16) {
+    for (let i = 0; i < a16.length; i++) {
+        a16_res.add(a16[i]);
+    }
+    console.log(a16_res);
+    
+}
+
+document.querySelector('.b-16').onclick = () => {
+    let a16 = [ { Ivan: 1 }, { Ivan: 1 }, { Ivan: 2 }, { Serg: 0 } ]
+    t16(a16);
+}
+
+// Task 17
+
+// Создайте строку u17 = 'Primer'. Создайте новый набор с Set(u17). 
+// Выведите в консоль. Изучите результат. 
+// Действия должны запускаться при вызове функции t17.
+
+let a17_res = new Set();
+
+function t17(u17) {
+    a17_res.add(u17);
+    console.log(a17_res);
+}
+
+document.querySelector('.b-17').onclick = () => {
+    let u17 = 'Primer';
+    t17(u17);
+}
+
+// Task 18.
+
+// Переберите массив a18 = [5, 7, 9, 11, 13, 15], c помощью цикла for of. 
+// Выведите на страницу в виде ключ - значение (разделены дефисом без пробелов). 
+// В конце строки - br. Результирующую строку присвойте a18_res. 
+// Действия должны запускаться при вызове функции t18.
+
+function t18(a18, out18, ras) {
+    let a18_res = '';
+    console.log(Object.keys(a18));
+    for (let value of a18) {
+        
+        a18_res += `${ras}${value} <br>`;
+    }
+    out18.innerHTML = a18_res;
+    
+}   
+
+document.querySelector('.b-18').onclick = () => {
+    let a18 = [5, 7, 9, 11, 13, 15];
+    let out18 = document.querySelector('.out-18');
+    let ras = '-';
+    t18(a18, out18, ras);
+}
