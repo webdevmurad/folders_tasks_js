@@ -378,14 +378,16 @@ document.querySelector('.b-17').onclick = () => {
 // В конце строки - br. Результирующую строку присвойте a18_res. 
 // Действия должны запускаться при вызове функции t18.
 
+let score = 0;
+
 function t18(a18, out18, ras) {
     let a18_res = '';
     console.log(Object.keys(a18));
     for (let value of a18) {
-        
-        a18_res += `${ras}${value} <br>`;
+        a18_res += score + ras + value + '<br>' ;
+        score++;
     }
-    out18.innerHTML = a18_res;
+    out18.innerHTML += a18_res;
     
 }   
 
@@ -394,4 +396,61 @@ document.querySelector('.b-18').onclick = () => {
     let out18 = document.querySelector('.out-18');
     let ras = '-';
     t18(a18, out18, ras);
+}
+
+// Task 19
+
+// Создайте набор a19 и добавьте в него значения. 
+// Выведите на страницу каждый второй по счету элемент набора. 
+// Действия должны запускаться при вызове функции t19.
+
+function t19(a19, out19) {
+    let che = 0
+    for (let index of a19) {
+        che++;
+        if (che % 2 == 0) {
+            out19.innerHTML += index + ' '
+        }
+    }
+    
+}
+
+document.querySelector('.b-19').onclick = () => {
+    let out19 = document.querySelector('.out-19');
+    let a19 = new Set();
+    a19.add(1);
+    a19.add(3);
+    a19.add(5);
+    a19.add(9);
+    a19.add(8);
+    a19.add(2);
+    t19(a19, out19);
+}
+
+// Task 20
+
+// Создайте функцию, которая принимает массив и четные по индексу элементы 
+// добавляет в набор s20_res в нечетные в набор s21_res. 
+// Выводите данные наборы в консоль.
+let s20_res = '';
+let s21_res = '';
+let index = 0;
+function t20(a20, out20) {
+    for (let value of a20) {
+        index++;
+        if (index % 2 == 0) {
+            s20_res += value;
+        } else {
+            s21_res += value;
+        }
+    }
+    out20.innerHTML += s20_res + ' ';
+    out20.innerHTML += '<br>';
+    out20.innerHTML += s21_res + ' ';
+}
+
+document.querySelector('.b-20').onclick = () => {
+    let out20 = document.querySelector('.out-20');
+    let a20 = [2, 7, 9, 8, 6, 15];
+    t20(a20, out20);
 }
