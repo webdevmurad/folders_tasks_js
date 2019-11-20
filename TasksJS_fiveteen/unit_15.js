@@ -187,11 +187,17 @@ let a10 = [5, 7, 9, 11, 13, 15, 5, 7, 5, 2, 3, 7, 13],
 
 function t10(a10) {
 
-    for ( let a in a10) {
-        
+    let res = {};
+    let a10S = new Set(a10);
+    for (let num of a10S) {
+        res[num] = 0;
+        for(let i = 0; i < a10.length; i++) {
+            if (num == a10[i]) {
+                res[num]++;
+            }
+        }
     }
-
-    console.log(a10_res);
+    console.log(res);
 }
 
 document.querySelector('.b-10').onclick = function () {
