@@ -173,6 +173,12 @@ let a11 = [5, 7, 9, 11, 13, 15];
 
 function t11(a11) {
 
+    let a11_res = ''
+    let hyp = '-';
+    for (let i in a11) {
+        a11_res += i + hyp + a11[i] + '<br>';
+    }
+    document.querySelector('.out-11').innerHTML += a11_res;
 
 }
 
@@ -188,7 +194,10 @@ document.querySelector('.b-11').onclick = function () {
 
 function t12() {
 
-
+    let u12 = document.getElementsByClassName('u-12');
+    for (let div in u12) {
+        u12[div].innerHTML += 12;
+    }
 }
 
 document.querySelector('.b-12').onclick = t12;
@@ -199,7 +208,10 @@ document.querySelector('.b-12').onclick = t12;
 
 
 function t13() {
-
+    let u13 = document.querySelectorAll('.u-13');
+    for(let i = 0; i < u13.length; i++) {
+        u13[i].innerHTML += 13;
+    }
 
 }
 
@@ -214,8 +226,11 @@ document.querySelector('.b-13').onclick = t13;
 let a14 = [[1, 2], [3, 4], [5, 6]];
 
 function t14(a14) {
-
-
+    let arr14 = [];
+    for (let arr in a14) {
+        document.querySelector('.out-14').innerHTML = arr14.concat(a14[0], a14[1], a14[2]);
+    }
+    
 }
 
 document.querySelector('.b-14').onclick = function () {
@@ -228,10 +243,14 @@ document.querySelector('.b-14').onclick = function () {
     Действия должны запускаться при вызове функции t15. Результат операции запишите в a15_res.
  */
 
-let a15 = [[1, 2], [3, 4], [5, 6]];
+let a15 = [[1,2,3], [3,4,9], [5,6]];
 
 function t15(a15) {
-
+    let a15_res = '';
+    for (let arr15 in a15) {
+        a15_res = Math.max(arr15);
+        document.querySelector('.out-15').innerHTML = a15_res;
+    }
 
 }
 
@@ -246,10 +265,14 @@ document.querySelector('.b-15').onclick = function () {
  */
 
 let a16 = [4, 6, 9, "hello"];
-
+let arr16 = {};
 function t16(a16) {
-
-
+    
+    for (let elem in a16) {
+        arr16[a16[elem]] = a16[elem];
+    }
+    let a16_res = arr16;
+    console.log(a16_res);
 }
 
 document.querySelector('.b-16').onclick = function () {
@@ -262,9 +285,11 @@ document.querySelector('.b-16').onclick = function () {
  */
 
 let a17 = [5, 7, 9, 11, 13, 15];
-
 function t17(a17) {
-
+    let out17 = document.querySelector('.out-17')
+    for (let elem of a17) {
+        out17.innerHTML += elem + ' ';
+    }
 
 }
 
@@ -279,9 +304,15 @@ document.querySelector('.b-17').onclick = function () {
  */
 
 let a18 = [5, 7, 9, 11, 13, 15];
-
+let score = 0;
 function t18(a18) {
-
+    let t = '-';
+    let a18_res = '';
+    for (let elem of a18) {
+        a18_res = score + t + elem + '<br>';
+        document.querySelector('.out-18').innerHTML += a18_res;
+        score++;
+    }
 
 }
 
@@ -295,6 +326,11 @@ document.querySelector('.b-18').onclick = function () { t18(a18) };
 
 function t19() {
 
+    div19 = document.getElementsByClassName('u-19');
+    for (let div of div19) {
+        div.innerHTML += 19;
+    }
+
 }
 
 document.querySelector('.b-19').onclick = t19;
@@ -305,8 +341,15 @@ document.querySelector('.b-19').onclick = t19;
  */
 
 let a20 = [4, 6, 9, "hello"];
+let obj20 = {};
 
 function t20(a20) {
+
+    for (let elem of a20) {
+        obj20[elem] = elem;
+        console.log(obj20);
+    }
+
 }
 
 document.querySelector('.b-20').onclick = function () {
