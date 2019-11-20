@@ -96,6 +96,11 @@ document.querySelector('.b-6').onclick = t6;
 /*  Дан массив a7 = [ [1,2], [3,4], [5,6]], напишите функцию которая делает из него массив [1,2,3,4,5,6]. Используем for. Действия должны запускаться при вызове функции t7. Результат - выведите на страницу и сохраните в массив a7_res. */
 
 function t7() {
+    let a7 = [[1,2], [3,4], [5,6]]
+    let a7_res = [];
+    for (let i = 0; i < a7.length; i++) {
+        document.querySelector('.out-7').innerHTML = a7_res.concat(a7[0], a7[1], a7[2]);
+    }
 
 }
 
@@ -106,8 +111,12 @@ document.querySelector('.b-7').onclick = t7;
 
 let a8 = [[1, 2, 3], [3, 4, 9], [5, 6]];
 
-function t8(a8) {
 
+function t8(a8) {
+    for (let i = 0; i < a8.length; i++) {
+        let a8_res = Math.max(i);
+        document.querySelector('.out-8').innerHTML = a8_res;
+    }
 }
 
 document.querySelector('.b-8').onclick = function () {
@@ -119,9 +128,14 @@ document.querySelector('.b-8').onclick = function () {
 /*  Дан массив a9 = [4, 6, 9, "hello"]. Напишите функцию, которая преобразовывает его в ассоциативный массив вида a9_1={4: 4, 6: 6, 9: 9, hello : "hello"}. Используйте цикл for. Результат сохраняется в переменную a9_res. Используем for. Действия должны запускаться при вызове функции t9.*/
 
 let a9 = [4, 6, 9, "hello"];
+let a9_1 = {}
 
 function t9(a9) {
-
+    for (let i = 0; i < a9.length; i++) {
+        a9_1[a9[i]] = a9[i];
+    }
+    let a9_res = a9_1;
+    console.log(a9_res);
 }
 
 document.querySelector('.b-9').onclick = function () {
@@ -137,7 +151,12 @@ document.querySelector('.b-9').onclick = function () {
 let a10 = [5, 7, 9, 11, 13, 15];
 
 function t10(a10) {
-
+    let a10_res = ''
+    for (let elem in a10) {
+        a10_res += a10[elem] + ' ';
+        
+    }
+    document.querySelector('.out-10').innerHTML = a10_res;
 
 }
 
