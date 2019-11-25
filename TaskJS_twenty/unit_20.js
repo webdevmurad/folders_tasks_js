@@ -45,7 +45,12 @@ inp3.onkeypress = function(event) {
 }
 
 function t3(event) {
-    console.log(typeof event.keyCode);
+    console.log(typeof event.keyCode.toString());
+    if(event.code.toString().slice(0,6)=="Numpad" || event.code.slice(0,5) == "Digit") {
+        out3.innerHTML = 'true';
+    } else {
+        out3.innerHTML = 'false';
+    }
 }
 
 // ваше событие здесь!!!
@@ -61,7 +66,7 @@ inp4.onkeypress = function(event) {
     t4(event);
 }
 
-function t4() {
+function t4(event) {
     out4.innerHTML += event.key.toLowerCase();
 }
 
