@@ -22,3 +22,62 @@ section {
 .hide {
     display: none;
 }
+.keyboard {
+    width: 710px;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 4px;
+    position: relative;
+}
+.line::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.key {
+    float: left;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 3px;
+    text-align: center;
+    line-height: 32px;
+}
+.active {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.key:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.backspace {
+    width: auto;
+}
+.tab {
+    width: 60px;
+}
+.capslock {
+    width: 60px;
+    line-height: 100%;
+}
+.shift {
+    width: 110px;
+}
+.ctrl, .win, .alt, .conM {
+    width: 50px;
+}
+.space {
+    width: 295px;
+}
+.enter {
+    position: absolute;
+    right: 10px;
+    top: 51px;
+    width: 70px;
+    height: 85px;
+}
