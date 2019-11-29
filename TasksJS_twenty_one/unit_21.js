@@ -156,13 +156,49 @@ function t11(event) {
     Источник иконок https://www.iconfinder.com/iconsets/unigrid-phantom-halloween
 */
 
-let a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
-prev = document.querySelector('.prev'),
-next = document.querySelector('.next');
+let arr = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
+    prev = document.querySelector('.prev'),
+    next = document.querySelector('.next');
+let divs = document.querySelectorAll('.img-12-min');
+let divBig = document.querySelector('.img-12-max');
+let reset = document.querySelector('.reset');
 
-function t12() {
 
+reset.ontouchstart = () => {
+    divBig.src = `img/${arr[0]}`;
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].classList.remove('active-img');
+        divs[0].classList.add('active-img');
+    }
 }
+
+for (let i = 0; i < divs.length; i++) {
+    divs[i].onclick = () => {
+        divs.forEach(elem => {
+            elem.classList.remove('active-img');
+        })
+        divs[i].classList.add('active-img');
+        divBig.src = divs[i].src;
+    }
+}
+
+let slideIndex = 0;
+
+for (let i = 0; i < arr.length; i++) {
+    next.onclick = () => {
+        arr[slideIndex];
+        slideIndex++;
+        divBig.src = 'img/' + arr[slideIndex];
+    }
+
+    prev.onclick = () => {
+        slideIndex--;
+        divBig.src = 'img/' + arr[slideIndex];
+    }  
+}
+
+
+
 
 // ваше событие здесь!!!
 
