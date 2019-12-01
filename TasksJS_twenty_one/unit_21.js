@@ -162,6 +162,7 @@ let arr = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
 let divs = document.querySelectorAll('.img-12-min');
 let divBig = document.querySelector('.img-12-max');
 let reset = document.querySelector('.reset');
+let des = document.querySelector('.img-12-text');
 
 
 reset.ontouchstart = () => {
@@ -169,6 +170,7 @@ reset.ontouchstart = () => {
     for (let i = 0; i < divs.length; i++) {
         divs[i].classList.remove('active-img');
         divs[0].classList.add('active-img');
+        des.innerHTML = divs[0].getAttribute('data-text');
     }
 }
 
@@ -179,23 +181,42 @@ for (let i = 0; i < divs.length; i++) {
         })
         divs[i].classList.add('active-img');
         divBig.src = divs[i].src;
+        des.innerHTML = divs[i].getAttribute('data-text');
     }
 }
 
 let slideIndex = 0;
 
-for (let i = 0; i < arr.length; i++) {
-    next.onclick = () => {
-        arr[slideIndex];
-        slideIndex++;
-        divBig.src = 'img/' + arr[slideIndex];
-    }
+prev.onclick = () => {
+    divs.forEach( elem => {
+        elem.classList.remove('active-img');
+    })
+    slideIndex--;
 
-    prev.onclick = () => {
-        slideIndex--;
-        divBig.src = 'img/' + arr[slideIndex];
-    }  
+    if (slideIndex < 0) {
+        slideIndex = divs.length - 1;
+    }
+    divBig.src = divs[slideIndex].src;
+    divs[slideIndex].classList.add('active-img');
+    des.innerHTML = divs[slideIndex].getAttribute('data-text');
 }
+
+next.onclick = () => {
+    divs.forEach( elem => {
+        elem.classList.remove('active-img');
+    })
+    slideIndex++;
+
+    if (slideIndex > divs.length - 1) {
+        slideIndex = 0;
+    }
+    console.log(slideIndex);
+    divBig.src = divs[slideIndex].src;
+    divs[slideIndex].classList.add('active-img');
+    des.innerHTML = divs[slideIndex].getAttribute('data-text');
+
+}
+
 
 
 
