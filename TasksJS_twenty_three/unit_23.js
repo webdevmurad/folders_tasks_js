@@ -189,7 +189,110 @@ function t10() {
 }
 
 function t11() {
+    let table = document.querySelector('table');
+    function showTable() {
+        let product = localStorage.getItem('cart');
+        product = JSON.parse(product);
+        let count = 0;
+        if (count == 0) {
+            table.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>
+                            Наименование
+                        </th>
+                        <th>
+                            Количество
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+            `
+            for (let prod in product) {
+                table.innerHTML += `
+                    <tr>
+                        <td>
+                            <p>${prod}</p>
+                        </td>
+                        <td>
+                            <p class='count'>${product[prod]}</p>
+                        </td>
+                        <td>
+                            <button class='plus'>+</button>
+                            <button class='min'>-</button>
+                        </td>
+                    </tr>
+                </body>
+            `;
+            count += product[prod];
+            }
+            table.innerHTML += `
+                <tr>
+                    <td>
+                        <p>
+                            Общее кол-во товаров: <p class="counts">${count}</p>
+                        </p>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <button>
+                            Оформить заказ
+                        </button>
+                    </td>
+                </tr>
+            `
+        }
+    }
 
+    function plusProd() {
+        let plusBtn = document.querySelectorAll('.plus');
+        let product = localStorage.getItem('cart');
+        product = JSON.parse(product);
+
+        plusBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                let elem = e.target.parentNode.parentNode.parentNode.querySelector('tr td p').textContent;
+                product[elem] += 1;
+                localStorage.setItem('cart', JSON.stringify(product));
+                t11();
+            };
+        });
+    }
+
+    function minProd() {
+        let minBtn = document.querySelectorAll('.min');
+        let product = localStorage.getItem('cart');
+        product = JSON.parse(product);
+
+        minBtn.forEach(btn => {
+            btn.onclick = (e) => {
+                let elem = e.target.parentNode.parentNode.parentNode.querySelector('tr td p').textContent;
+                product[elem] += -1;
+                localStorage.setItem('cart', JSON.stringify(product));
+                t11();
+            }
+        })
+    }
+
+    function nullProd() {
+        let product = localStorage.getItem('cart');
+        product = JSON.parse(product);
+        let counts = document.querySelector('.counts').textContent;
+        if(counts == 0) {
+            let tableW = document.querySelector('table');
+            tableW.remove();
+            let tableWrap = document.querySelector('.table-wrap')
+            let newBody = document.createElement('table');
+            tableWrap.appendChild(newBody);
+            newBody.textContent = 'Корзина пуста';
+        }
+    }
+
+    showTable();
+    plusProd();
+    minProd();
+    nullProd();
 }
 
 
