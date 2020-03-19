@@ -2,7 +2,7 @@
 // Вывод в консоль
 
 for (let i = 1; i < 11; i++) {
-    console.log(i);
+    // console.log(i);
 }
 
 // Task 2
@@ -229,3 +229,75 @@ for(let i = 0; i < allIn.length; i++) {
 }
 
 
+// Task 21 
+// Вывод на экран
+let task21 = document.querySelector('.task21');
+
+for (let i = 2; i <= 122; i++ ) {
+    if (i % 2 == 0) {
+        task21.innerHTML += i + ' ';
+    }
+}
+
+
+
+// Task 22 
+// Вывод на экран
+
+let task22 = document.querySelector('.task22'),
+    btn22 = document.querySelector('.btn22');
+
+btn22.addEventListener('click', func22);
+
+function func22() {
+    for (let i = 25; i >= 7; i--) {
+        task22.innerHTML += i + ' ';
+    }
+}
+
+// Task 23 
+// Вывод на экран
+
+let task23 = document.querySelector('.task23'),
+    btn23 = document.querySelector('.btn23');
+
+btn23.addEventListener('click', func23);
+
+function func23() {
+    for (let i = 77; i >= 35; i = i - 3) {
+        task23.innerHTML += i + '_'
+    }
+    
+}
+
+// Task 24 
+// Вывод на экран
+
+let task24 = document.querySelector('.task24'),
+    btn24 = document.querySelector('.btn24');
+
+btn24.addEventListener('click', func24);
+
+function func24() {
+    for (let i = 1; i <= 17; i++) {
+        if (i % 2 == 0) {
+            task24.innerHTML += i + '_**'
+        } else {
+            task24.innerHTML += i + '_*'
+        }
+    }
+}
+
+// Task 25 
+// Вывод на экран
+
+let task25 = document.querySelector('.task25'),
+    btn25 = document.querySelector('.btn25');
+
+btn25.addEventListener('click', func25);
+
+function func25() {
+    for (let i = 1; i <= 3; i++) {
+        task25.innerHTML += '******' + '<br>'
+    }
+}
